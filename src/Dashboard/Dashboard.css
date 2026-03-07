@@ -1,0 +1,314 @@
+/* Dashboard.css */
+
+:root {
+  /* These are default fallbacks, your React code will override these */
+  --bg-color: #0a0e23;
+  --text-color: #f0f4ff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-hover: rgba(255, 255, 255, 0.12);
+  --button-bg: linear-gradient(135deg, #0f4c75, #3282b8);
+  --accent-glow: rgba(50, 130, 184, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.db-container {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- MAGIC BACKGROUND BLURS --- */
+.db-container::before {
+  content: "";
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, var(--button-bg), transparent 70%);
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- HEADER --- */
+.db-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.db-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Increased for a luxury brand feel */
+  
+  /* Metallic Gold Gradient */
+  background: linear-gradient(
+    to bottom,
+    #cf972d 22%, 
+    #fceabb 45%, 
+    #fccd4d 50%, 
+    #f8b500 55%, 
+    #bf953f 78%
+  );
+  
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Animated Shine Effect */
+  animation: shine-text 5s linear infinite;
+  
+  /* Subtle outer glow to make it pop against dark backgrounds */
+  filter: drop-shadow(0 0 8px rgba(252, 234, 187, 0.3));
+  
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect: Letters expand slightly like a luxury intro */
+.db-title:hover {
+  letter-spacing: 6px;
+  filter: drop-shadow(0 0 15px rgba(252, 234, 187, 0.6));
+  cursor: pointer;
+}
+
+/* Keyframes to move the metallic reflection across the text */
+@keyframes shine-text {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Optional: Add a small "ESTD 2026" or "PRIVATE" tag above it for extra premium feel */
+.db-header::before {
+  content: "PRIVATE BANKING";
+  position: absolute;
+  top: -15px;
+  left: 2px;
+  font-size: 0.6rem;
+  color: #cf972d;
+  letter-spacing: 3px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.db-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.db-icon {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.db-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.db-profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--button-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+/* --- DASHBOARD CARDS (Glassmorphism) --- */
+.db-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.db-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.db-card:hover {
+  transform: translateY(-10px);
+  background: var(--card-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.db-card-icon {
+  margin-bottom: 1rem;
+  color: #3282b8; /* Use a vivid color or a variable */
+}
+
+.db-card h3 {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.db-card p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0 0;
+}
+
+/* --- QUICK ACTIONS --- */
+.db-quick-actions h2, .db-transactions h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.db-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.db-action-button {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.db-action-button:hover {
+  background: var(--button-bg);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+/* --- TRANSACTIONS --- */
+.db-transactions {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.db-transaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.db-transaction:last-child {
+  border-bottom: none;
+}
+
+.db-credit { color: var(--credit-color); font-weight: 600; }
+.db-debit { color: var(--debit-color); font-weight: 600; }
+
+/* --- SLIDE-IN PANELS (Settings/Profile) --- */
+.db-settings-panel, .db-profile-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 350px;
+  background: var(--bg-color);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  z-index: 100;
+  padding: 2rem;
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.db-settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.db-theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.db-theme-button {
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Panel Buttons Style */
+.db-theme-button.light { background: #f4f6f8; color: #333; }
+.db-theme-button.dark { background: #1a1a1a; color: #fff; border: 1px solid #444; }
+.db-theme-button.colorful { background: linear-gradient(135deg,#ff6a00,#ee0979); color: #fff; }
+
+/* Mobile Menu Icon */
+.db-menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.db-menu-icon span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .db-container { padding: 1rem; }
+  .db-settings-panel { width: 100%; }
+  .db-title{ font-size: 1rem; }
+}

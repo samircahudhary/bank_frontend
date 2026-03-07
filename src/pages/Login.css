@@ -1,0 +1,89 @@
+/* 🌌 Professional Banking Background */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #35b3e9, #62d3f5, #0d87f2);
+  height: 100vh;
+}
+
+/* Center Layout */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Glass Card */
+.card {
+  width: 380px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  color: white;
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Main Heading */
+.main-heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.sub-heading {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Inputs */
+.form-control {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  color: white;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 15px #00d4ff;
+}
+
+/* Button */
+.btn-primary {
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 12px;
+  background: linear-gradient(45deg, #00d4ff, #0072ff);
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00d4ff;
+}
+
+/* Link */
+a {
+  color: #00d4ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

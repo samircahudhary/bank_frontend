@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* MAIN CONTAINER */
+.signup-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+}
+
+.left-panel h1 {
+  font-size: 50px;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.left-panel h3 {
+  margin-top: 15px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.left-panel p {
+  margin-top: 25px;
+  max-width: 400px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  flex: 1;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORM CARD */
+.form-card {
+  width: 500px;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 2 COLUMN GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* FULL WIDTH BUTTON */
+.form-grid button {
+  grid-column: span 2;
+}
+
+/* INPUT STYLE */
+.form-grid input,
+.form-grid select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+/* BUTTON */
+.signup-btn {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.03);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+}
+
+/* MAIN CONTAINER */
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ================= LEFT PANEL ================= */
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+}
+
+.left-panel h1 {
+  font-size: 52px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.left-panel h3 {
+  margin-top: 15px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.left-panel p {
+  margin-top: 25px;
+  max-width: 420px;
+  line-height: 1.7;
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+/* ================= RIGHT PANEL ================= */
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #f8fafc;
+}
+
+/* FORM CARD */
+.form-card {
+  width: 100%;
+  max-width: 520px;
+  background: white;
+  padding: 45px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* 2 COLUMN GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* FULL WIDTH BUTTON */
+.form-grid button {
+  grid-column: span 2;
+}
+
+/* INPUT STYLE */
+.form-grid input,
+.form-grid select {
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+/* BUTTON */
+.signup-btn {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+  .left-panel {
+    padding: 50px;
+  }
+
+  .left-panel h1 {
+    font-size: 42px;
+  }
+
+  .form-card {
+    padding: 35px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    padding: 40px 25px;
+    text-align: center;
+  }
+
+  .left-panel p {
+    max-width: 100%;
+  }
+
+  .right-panel {
+    padding: 30px 20px;
+  }
+
+  .form-card {
+    padding: 30px;
+  }
+
+  /* FORM becomes 1 column */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid button {
+    grid-column: span 1;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+  .left-panel h1 {
+    font-size: 34px;
+  }
+
+  .left-panel h3 {
+    font-size: 16px;
+  }
+
+  .form-card h2 {
+    font-size: 20px;
+  }
+}

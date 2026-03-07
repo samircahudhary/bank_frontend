@@ -1,0 +1,156 @@
+.premium-scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  perspective: 1000px;
+}
+
+/* PREMIUM CARD DESIGN */
+.premium-card {
+  width: 380px;
+  height: 230px;
+  background: linear-gradient(135deg, #111 0%, #333 100%);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden; /* Keeps glass shine inside */
+  border: 1px solid rgba(255, 215, 0, 0.3); /* Soft Gold border */
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.premium-card:hover {
+  transform: scale(1.02) rotateX(5deg);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.card-pulse {
+  animation: cardShake 0.4s ease-out;
+}
+
+@keyframes cardShake {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* DEEP GLASS EFFECT */
+.glass-overlay {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 55%
+  );
+  animation: autoShine 6s infinite linear;
+}
+
+@keyframes autoShine {
+  0% { transform: translateX(-30%) rotate(25deg); }
+  100% { transform: translateX(30%) rotate(25deg); }
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.gold-chip {
+  width: 55px;
+  height: 40px;
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.card-number-display {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.card-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.info-label {
+  font-size: 0.6rem;
+  opacity: 0.5;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.visa-logo {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+/* FIREWORK PARTICLE SYSTEM */
+.particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 14px;      /* bigger particle */
+  height: 14px;
+
+  background: var(--color);
+  border-radius: 50%;
+
+  pointer-events: none;
+  z-index: 10;
+
+  box-shadow:
+    0 0 10px var(--color),
+    0 0 25px var(--color),
+    0 0 45px var(--color); /* stronger glow */
+
+  animation: explode 1.3s ease-out forwards;
+}
+
+@keyframes explode {
+
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(
+      calc(var(--vx) * 3),
+      calc(var(--vy) * 3)
+    ) scale(0.3);   /* travels 3x farther */
+
+    opacity: 0;
+  }
+
+}
