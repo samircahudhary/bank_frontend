@@ -1,0 +1,176 @@
+:root {
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f9f295 50%, #b8860b 100%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --bot-blue: #1a2a6c;
+}
+
+.bot-container {
+    width: 380px;
+    height: 450px;
+    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    font-family: 'Inter', sans-serif;
+}
+
+.bot-header {
+    padding: 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bot-status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4caf50;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4caf50;
+}
+
+.bot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.message-wrapper.user { justify-content: flex-end; }
+
+.message-bubble {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.bot .message-bubble {
+    background: var(--glass-bg);
+    color: #e0e0e0;
+    border-bottom-left-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user .message-bubble {
+    background: var(--gold-gradient);
+    color: #000;
+    font-weight: 500;
+    border-bottom-right-radius: 2px;
+}
+
+.bot-input-area {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    gap: 10px;
+}
+
+.bot-input-area input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.bot-input-area input:focus {
+    border-color: #d4af37;
+}
+
+.bot-input-area button {
+    background: none;
+    border: none;
+    color: #d4af37;
+    cursor: pointer;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.bot-input-area button:hover {
+    transform: scale(1.1);
+}
+
+.typing-indicator {
+    font-size: 0.75rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* --- Desktop/Default Styles (already in your file) --- */
+
+
+/* --- Tablet & Mobile Responsiveness --- */
+
+/* For Tablets (Screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+    .bot-container {
+        width: 320px;
+        height: 500px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .bot-header {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* For Mobile Phones (Screens smaller than 480px) */
+@media screen and (max-width: 480px) {
+    .bot-container {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0; /* Full screen look */
+        border: none;
+    }
+
+    .bot-header {
+        padding: 20px;
+        border-radius: 0;
+        display: flex;
+        justify-content: space-between; /* Space for a close button if needed */
+    }
+
+    .message-bubble {
+        max-width: 85%; /* Give more room for text on small screens */
+        font-size: 1rem; /* Slightly larger text for readability */
+    }
+
+    .bot-input-area {
+        padding: 15px;
+        padding-bottom: 30px; /* Safe area for bottom-swipe gestures */
+        background: #111;
+    }
+
+    .bot-input-area input {
+        font-size: 16px; /* Prevents iOS from auto-zooming on focus */
+    }
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./atm.css";
 import atmImage from "../assets/atm.jpg";
-
+import Bot from "../BOT/bot";
 export default function ATM() {
   // Get logged-in user from localStorage
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -170,6 +170,11 @@ Transactions:\n`;
         Receipt
       </button>
 
+
+
+
+
+
       {/* Transactions */}
       <div className="atm-transactions">
         <h3>Transaction History</h3>
@@ -185,6 +190,11 @@ Transactions:\n`;
           </div>
         ))}
       </div>
+
+      
     </div>
+
+
+
   );
 }

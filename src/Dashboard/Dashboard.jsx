@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import ATM from "../ATM/atm";
 import AtmCard from "../ATM/atmcard";
+import Bot from "../BOT/bot";
 
 import {
   Bell,
@@ -32,6 +33,7 @@ const [transactions, setTransactions] = useState([]);
 const goToATM = () => {
   navigate("/atm");
 };
+
 
 
 const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -295,13 +297,8 @@ onClick={() => setMenuOpen(!menuOpen)}
 
       )}
 
-<div className="dashboard-container">
 
-  
 
-  <AtmCard user={user} />
-
-</div>
 
       {/* DASHBOARD CARDS */}
 
@@ -344,6 +341,19 @@ onClick={() => setMenuOpen(!menuOpen)}
         />
 
       </section>
+
+
+<div className="dashboard-container">
+
+  <div className="atm-section">
+    <AtmCard user={user} />
+  </div>
+
+  <div className="bot-section">
+    <Bot />
+  </div>
+
+</div>
 
 
 

@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import Signup2 from "./pages/Signup2";
 import ATM from "./ATM/atm";
 import ATMCard from "./ATM/atmcard";
+import Bot from "./BOT/bot";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/atm" element={<ATM />} />
         <Route path="/atm-card" element={<ATMCard />} />
+        <Route path="/bot" element={<Bot />} />
       </Routes>
     </BrowserRouter>
   );

@@ -312,3 +312,37 @@ body {
   .db-settings-panel { width: 100%; }
   .db-title{ font-size: 1rem; }
 }
+
+
+
+.dashboard-container{
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* each takes half screen on desktop */
+.atm-section{
+  flex: 1;
+}
+
+.bot-section{
+  flex: 1;
+}
+
+
+/* 📱 Mobile responsive */
+@media (max-width: 768px){
+
+  .dashboard-container{
+    flex-direction: column;
+  }
+
+  .atm-section,
+  .bot-section{
+    width: 100%;
+  }
+
+}
